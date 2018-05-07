@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html ng-app="listaTelefonica" lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
+<body ng-controller="testeController as ctrl">
     <h1>Lista Telefônica</h1>
+
+    <form name="myForm" ng-submit="ctrl.register()">
+        Name: <input type="text" ng-model="ctrl.user.name">
+        Email: <input type="text" ng-model="ctrl.user.email">
+        <input type="submit" value="Register">
+        <a href="" class="btn btn-primary" ng-click="ctrl.insertName('[NO]')">[NO] Teste NO</a>
+        <a href="" class="btn btn-primary" ng-click="ctrl.insertName('[EM]')">[EM] Teste EM</a>
+    </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.js"></script>
+    <script src="js/app/controllers/testeController.js"></script>
 </body>
 </html>
